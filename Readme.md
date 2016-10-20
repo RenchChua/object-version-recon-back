@@ -1,4 +1,4 @@
-# Object Versioning Reconstruction
+# Object Versioning Reconstruction - Backend
 
 ## Introduction
 
@@ -72,13 +72,13 @@ The app works... to some extent. Here are the limitations:
   - The backend isn't deployed live. I would need to level up on my devops skills to learn how to upload files onto live servers (e.g. Heroku or AWS).
   - Because the backend isn't deployed live, I run into issues of sending POST request to localhost from the deployed frontend. As a result, the app only currently works if both the frontend and backend are running on local
   - The backend server only works once. After uploading one file, the backend server freezes up. To upload another file, you would need to restart the server. I am not sure why that happens. The readstream has ended, you can still upload more files, but the backend server just doesn't return the json object to the frontend.
-  - Now the backend returns the entire JSON from the CSV. It will be an issue if the CSV is large. Can think about how to use Mongoose on the backend to save the data from the CSV into a NoSQL database instead of returning the entire JSON to the frontend. Then, we need only send the array of unique object types to the front end. And when the user chooses a specific object type, then we make another query to the backend database to retrieve all the timestamps related to the object type. And when the user selects the timestamp, then we make one more query to the backend to retrieve the relevant object state. 
+  - Now the backend returns the entire JSON from the CSV. It will be an issue if the CSV is large. Can think about how to use Mongoose on the backend to save the data from the CSV into a NoSQL database instead of returning the entire JSON to the frontend. Then, we need only send the array of unique object types to the front end. And when the user chooses a specific object type, then we make another query to the backend database to retrieve all the timestamps related to the object type. And when the user selects the timestamp, then we make one more query to the backend to retrieve the relevant object state.
 
 ## Tech Stack
 
  - Node.js
  - Express
- - React
+ - React (frontend)
 
 ## Credits
 
