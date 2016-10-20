@@ -13,7 +13,6 @@ router.get('/', function (req,res) {
 })
 
 router.post('/csv', upload.single('uploadFile'), function (req,res, next) {
-  // res.send("success")
   var file = req.file
   converter.on("end_parsed", function(jsonArray) {
     res.send(jsonArray)
@@ -22,7 +21,6 @@ router.post('/csv', upload.single('uploadFile'), function (req,res, next) {
 
   readStream.pipe(converter)
   readStream.on('end', function () {
-    console.log('stream ended');
     readStream.destroy()
   })
 
